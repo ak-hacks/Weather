@@ -1,10 +1,6 @@
 package com.develogical;
 
 import com.develogical.domain.ForecastReport;
-import com.develogical.domain.ForecastAdapter;
-import com.weather.Day;
-import com.weather.Forecaster;
-import com.weather.Region;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +17,6 @@ public class CachingForecasterService implements ForecasterService {
 
     @Override
     public ForecastReport getForecast(String region, String day) {
-
         final ForecastReport cachedForecastReport = getFromCache(region, day);
 
         if (cachedForecastReport != null) {
